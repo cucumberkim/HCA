@@ -395,3 +395,216 @@ nav {
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
 }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+
+.site-footer {
+  background: #060f1e;
+  border-top: 1px solid rgba(79, 163, 224, 0.15);
+  margin-top: auto;
+}
+
+/* ── Main grid ── */
+.footer-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 72px 32px 56px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.6fr;
+  gap: 48px;
+}
+
+/* ── Brand column ── */
+.footer-logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: var(--cloud);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.footer-logo span {
+  color: var(--gold);
+}
+
+.footer-tagline {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(232, 244, 253, 0.45);
+  margin-bottom: 28px;
+  max-width: 280px;
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(79, 163, 224, 0.2);
+  color: rgba(232, 244, 253, 0.5);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.social-icon svg {
+  width: 16px;
+  height: 16px;
+}
+.social-icon:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(79, 163, 224, 0.08);
+}
+
+/* ── Link columns ── */
+.footer-heading {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: rgba(232, 244, 253, 0.5);
+  text-decoration: none;
+  transition: color 0.2s, padding-left 0.2s;
+  display: inline-block;
+}
+.footer-links a:hover {
+  color: var(--cloud);
+  padding-left: 4px;
+}
+
+/* ── Contact column ── */
+.footer-contact {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(232, 244, 253, 0.5);
+  line-height: 1.6;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--accent);
+}
+.contact-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.footer-contact a {
+  color: rgba(232, 244, 253, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-contact a:hover {
+  color: var(--cloud);
+}
+
+.footer-cta {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.footer-cta:hover {
+  background: var(--gold);
+  color: var(--sky);
+}
+
+/* ── Bottom bar ── */
+.footer-bottom {
+  border-top: 1px solid rgba(79, 163, 224, 0.1);
+}
+
+.footer-bottom-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  color: rgba(232, 244, 253, 0.28);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-bottom-links a {
+  color: rgba(232, 244, 253, 0.28);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-bottom-links a:hover {
+  color: rgba(232, 244, 253, 0.6);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    padding: 48px 24px 40px;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 20px 24px;
+  }
+  .footer-bottom-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

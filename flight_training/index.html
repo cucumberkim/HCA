@@ -4,21 +4,242 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flight Training — SkyHawk</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../src/common.css" />
     <link rel="stylesheet" href="./flight_training.css" />
+    <style>
+      /* ── 컨테이너 ── */
+      .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+        justify-content: center;
+      }
+
+      /* ── 카드 기본 (데스크탑: 3열) ── */
+      .parent {
+        flex: 0 0 calc(33.333% - 16px); /* (gap*2)/3 */
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        justify-content: center;
+        border: 1px solid black;
+      }
+
+      /* .parent:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+      } */
+
+      /* ── 이미지 ── */
+      .child-image {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        display: block;
+        background: linear-gradient(135deg, #e8e3dc 0%, #d4cec6 100%);
+      }
+
+      /* placeholder 이미지 (실제 이미지가 없을 때) */
+      .image-placeholder {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        background: linear-gradient(
+          135deg,
+          var(--sky-mid) 0%,
+          var(--sky-deep) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--white);
+      }
+
+      /* ── 텍스트 영역 ── */
+      .child-body {
+        padding: 20px 22px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+        flex: 1;
+      }
+
+      .child-name {
+        /* font-family: "Playfair Display", serif; */
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        letter-spacing: -0.01em;
+      }
+
+      .child-caption {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        flex: 1;
+      }
+
+      /* ── 버튼 ── */
+      .child-btn {
+        margin-top: 14px;
+        display: inline-block;
+        padding: 10px 24px;
+        background: var(--accent);
+        color: #fff;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        letter-spacing: 0.03em;
+        transition: background 0.2s ease, transform 0.15s ease;
+        background: #1f78b8;
+      }
+
+      .child-btn:hover {
+        background: #1f78b8;
+        transform: scale(1.03);
+      }
+
+      /* ── 반응형: 태블릿 (2열) ── */
+      @media (max-width: 900px) {
+        .parent {
+          flex: 0 0 calc(50% - 12px);
+        }
+      }
+
+      /* ── 반응형: 모바일 (1열) ── */
+      @media (max-width: 560px) {
+        body {
+          padding: 32px 20px;
+        }
+
+        .parent {
+          flex: 0 0 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-
     <!-- ✈ Nav is loaded from src/nav.html — edit that file to update all pages -->
     <div id="nav-root"></div>
-    <script src="../src/nav-loader.js" data-page="flight_training" data-depth="1"></script>
+    <script
+      src="../src/nav-loader.js"
+      data-page="flight_training"
+      data-depth="1"
+    ></script>
 
     <main class="page-content">
       <h1 class="page-title">FLIGHT <span>TRAINING</span></h1>
-      <p class="page-subtitle">Choose your path to the skies</p>
-      <!-- Page content goes here -->
-    </main>
+      <!-- <p class="page-subtitle">Choose your path to the skies</p> -->
 
+      <div>
+        <h2>Welcome. Take your first step toward becoming a pilot.</h2>
+        <br />
+        <p>
+          At High Cloud Aviation, we focus on three things: safety, strong exam
+          preparation, and training that is actually enjoyable. Whether you are
+          starting from zero or working toward a career, our program is designed
+          to build confident and capable pilots.
+        </p>
+        <br />
+        <p>
+          Train one-on-one with a Certified Flight Instructor (CFI) through
+          structured, personalized lessons that combine flight and ground
+          instruction. You will progress from basic flight skills to solo
+          flight, cross-country navigation, and real-world flying in the Chicago
+          airspace.
+        </p>
+        <br />
+        <p>
+          By the end of your training, you will be prepared to pass your FAA
+          exams and operate safely and confidently at every stage of your
+          aviation journey—from initial certification through advanced ratings
+          and professional-level flying.
+        </p>
+      </div>
+
+      <h2>Choose your path</h2>
+
+      <div class="grid-container">
+        <!-- Card 1 -->
+        <div class="parent">
+          <div class="image-placeholder">🌿</div>
+          <div class="child-body">
+            <p class="child-name">Private Pilot Certificate</p>
+            <p class="child-caption">
+              여기에 짧은 설명 캡션이 들어갑니다. 이미지와 이름을 보완하는 한두
+              줄의 문장.
+            </p>
+            <button class="child-btn">자세히 보기</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="parent">
+          <div class="image-placeholder">🪨</div>
+          <div class="child-body">
+            <p class="child-name">Instrument Rating (IR)</p>
+            <p class="child-caption">
+              여기에 짧은 설명 캡션이 들어갑니다. 이미지와 이름을 보완하는 한두
+              줄의 문장.
+            </p>
+            <button class="child-btn">자세히 보기</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="parent">
+          <div class="image-placeholder">🌊</div>
+          <div class="child-body">
+            <p class="child-name">Commercial Pilot Certificate</p>
+            <p class="child-caption">
+              여기에 짧은 설명 캡션이 들어갑니다. 이미지와 이름을 보완하는 한두
+              줄의 문장.
+            </p>
+            <button class="child-btn">자세히 보기</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="parent">
+          <div class="image-placeholder">🔥</div>
+          <div class="child-body">
+            <p class="child-name">Certified Flight Instructor</p>
+            <p class="child-caption">
+              여기에 짧은 설명 캡션이 들어갑니다. 이미지와 이름을 보완하는 한두
+              줄의 문장.
+            </p>
+            <button class="child-btn">자세히 보기</button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="parent">
+          <div class="image-placeholder">⭐</div>
+          <div class="child-body">
+            <p class="child-name">Ground School</p>
+            <p class="child-caption">
+              여기에 짧은 설명 캡션이 들어갑니다. 이미지와 이름을 보완하는 한두
+              줄의 문장.
+            </p>
+            <button class="child-btn">자세히 보기</button>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
