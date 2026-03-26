@@ -34,16 +34,16 @@
       // nav.html uses data-root-href for root-relative paths.
       // For depth=0 (index), we use data-root-href as-is (./page/).
       // For depth=1 (sub-page), we prefix with ../  (../page/).
-      placeholder.querySelectorAll("[data-root-href]").forEach(el => {
-        const rootHref = el.getAttribute("data-root-href");
-        if (depth === 0) {
-          el.setAttribute("href", rootHref);
-        } else {
-          // Strip leading "./" and go up one level
-          const adjusted = "../" + rootHref.replace(/^\.\//, "");
-          el.setAttribute("href", adjusted);
-        }
-      });
+      // placeholder.querySelectorAll("[data-root-href]").forEach(el => {
+      //   const rootHref = el.getAttribute("data-root-href");
+      //   if (depth === 0) {
+      //     el.setAttribute("href", rootHref);
+      //   } else {
+      //     // Strip leading "./" and go up one level
+      //     const adjusted = "../" + rootHref.replace(/^\.\//, "");
+      //     el.setAttribute("href", adjusted);
+      //   }
+      // });
 
       // ── 2. Mark active menu item ─────────────────────────────────────────
       if (activePage) {

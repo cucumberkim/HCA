@@ -27,16 +27,22 @@
       }
       placeholder.innerHTML = html;
 
+
+      const yearEl = placeholder.querySelector("#footer-year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
       // Fix hrefs based on depth (same logic as nav-loader)
-      placeholder.querySelectorAll("[data-root-href]").forEach(el => {
-        const rootHref = el.getAttribute("data-root-href");
-        if (depth === 0) {
-          el.setAttribute("href", rootHref);
-        } else {
-          const adjusted = "../" + rootHref.replace(/^\.\//, "");
-          el.setAttribute("href", adjusted);
-        }
-      });
+      // placeholder.querySelectorAll("[data-root-href]").forEach(el => {
+      //   const rootHref = el.getAttribute("data-root-href");
+      //   if (depth === 0) {
+      //     el.setAttribute("href", rootHref);
+      //   } else {
+      //     const adjusted = "../" + rootHref.replace(/^\.\//, "");
+      //     el.setAttribute("href", adjusted);
+      //   }
+      // });
     })
     .catch(err => {
       console.error("[footer-loader]", err);
