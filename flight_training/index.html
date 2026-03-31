@@ -25,21 +25,16 @@
       .parent {
         flex: 0 0 calc(33.333% - 16px); /* (gap*2)/3 */
         background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: 16px;
+
+        border-radius: 100px;
         overflow: hidden;
-        box-shadow: var(--shadow);
+
         display: flex;
         flex-direction: column;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        justify-content: center;
-        border: 1px solid black;
-      }
 
-      /* .parent:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
-      } */
+        justify-content: center;
+        border: 4px solid black;
+      }
 
       /* ── 이미지 ── */
       .child-image {
@@ -47,23 +42,6 @@
         aspect-ratio: 4 / 3;
         object-fit: cover;
         display: block;
-        background: linear-gradient(135deg, #e8e3dc 0%, #d4cec6 100%);
-      }
-
-      /* placeholder 이미지 (실제 이미지가 없을 때) */
-      .image-placeholder {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        background: linear-gradient(
-          135deg,
-          var(--sky-mid) 0%,
-          var(--sky-deep) 100%
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        color: var(--white);
       }
 
       /* ── 텍스트 영역 ── */
@@ -75,13 +53,14 @@
         text-align: center;
         gap: 5px;
         flex: 1;
+        background-color: #fff;
       }
 
       .child-name {
-        /* font-family: "Playfair Display", serif; */
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: var(--text-primary);
         letter-spacing: -0.01em;
+        font-weight: bold;
       }
 
       .child-caption {
@@ -144,7 +123,6 @@
 
     <main class="page-content">
       <h1 class="page-title">FLIGHT <span>TRAINING</span></h1>
-      <!-- <p class="page-subtitle">Choose your path to the skies</p> -->
 
       <div>
         <h2>Welcome. Take your first step toward becoming a pilot.</h2>
@@ -177,7 +155,10 @@
       <div class="grid-container">
         <!-- Card 1 -->
         <div class="parent">
-          <div class="image-placeholder">🌿</div>
+          <img
+            class="child-image"
+            src="/HCA/flight_training/src/sample3.webp"
+          />
           <div class="child-body">
             <p class="child-name">Private Pilot Certificate</p>
             <p class="child-caption">
@@ -190,7 +171,10 @@
 
         <!-- Card 2 -->
         <div class="parent">
-          <div class="image-placeholder">🪨</div>
+          <img
+            class="child-image"
+            src="/HCA/flight_training/src/sample2.webp"
+          />
           <div class="child-body">
             <p class="child-name">Instrument Rating</p>
             <p class="child-caption">
@@ -203,7 +187,7 @@
 
         <!-- Card 3 -->
         <div class="parent">
-          <div class="image-placeholder">🌊</div>
+          <img class="child-image" src="/HCA/flight_training/src/sample1.jpg" />
           <div class="child-body">
             <p class="child-name">Commercial Pilot Certificate</p>
             <p class="child-caption">
@@ -216,7 +200,7 @@
 
         <!-- Card 4 -->
         <div class="parent">
-          <div class="image-placeholder">🔥</div>
+          <img class="child-image" src="/HCA/flight_training/src/sample5.png" />
           <div class="child-body">
             <p class="child-name">Certified Flight Instructor</p>
             <p class="child-caption">
@@ -229,7 +213,7 @@
 
         <!-- Card 5 -->
         <div class="parent">
-          <div class="image-placeholder">⭐</div>
+          <img class="child-image" src="/HCA/flight_training/src/sample4.jpg" />
           <div class="child-body">
             <p class="child-name">Ground School</p>
             <p class="child-caption">
@@ -270,4 +254,9 @@
     <div id="footer-root"></div>
     <script src="../src/footer-loader.js" data-depth="0"></script>
   </body>
+
+  <div id="cursor">
+    <img src="/HCA/src/f22.png" />
+  </div>
+  <script src="/HCA/src/common.js" defer></script>
 </html>
